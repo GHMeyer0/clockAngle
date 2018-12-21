@@ -9,6 +9,7 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
 import java.util.Locale;
+import java.util.Scanner;
 import java.util.TimeZone;
 
 /**
@@ -21,33 +22,41 @@ public class ClockAngle {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+        int hora, minuto = 0, angulo;
         GregorianCalendar gc = new GregorianCalendar();
-        /* gc.set(GregorianCalendar.YEAR, 2015);
-        gc.set(GregorianCalendar.HOUR_OF_DAY, 5);
-        gc.set(GregorianCalendar.MINUTE, 25);*/
-        double angulo;
+        Scanner in = new Scanner(System.in);
+        
+        System.out.println("Informe a hora e os minutos com espaço, ou deixe em branco para utilizar a hora atual: ");
+        hora = in.nextIn
+        minuto = in.nextInt();
+        if (hora >= 0 && hora <=24){
+            System.out.println("Hello");
+        } else {
+        }
+        
+        
+        
+        
+        
+        
         angulo = retornaAnguloRelogio(gc);
-        System.out.println(angulo); 
-        System.out.println(gc); 
-        System.out.println(gc.getTime());     
-        System.out.println(gc.MINUTE);    
-        int hora = gc.get(Calendar.HOUR_OF_DAY);
-        System.out.println(hora); 
+        System.out.println(hora + ":" + minuto); 
 
 
     }
-    static public double retornaAnguloRelogio(GregorianCalendar time){
+    static public int retornaAnguloRelogio(GregorianCalendar time){
         
         int hora = time.get(Calendar.HOUR_OF_DAY);
-        int minuto = time.get(Calendar.MINU);
-        double angHora = hora*30;
-        double angMinuto = minuto*4.5;
+        int minuto = time.get(Calendar.MINUTE);
+        int angHora = hora*30;
+        int angMinuto = minuto*6;
+        
+        int ang = angHora-angMinuto;
         
         for(int i = 0; i < 10; i++){
 
         }
-        int ang = minuto;
-        return angHora;
+        return ang;
     };    
     
 }
